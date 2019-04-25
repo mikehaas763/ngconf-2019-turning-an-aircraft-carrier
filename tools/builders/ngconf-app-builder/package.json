@@ -1,0 +1,6 @@
+{
+  "builders": "builders.json",
+  "scripts": {
+    "generate-schema-jsons": "node ./src/browser/generate-schema-json.js && node ./src/browser-deployable-unit/generate-schema-json.js  && node ./src/dev-server/generate-schema-json.js"
+  }
+}

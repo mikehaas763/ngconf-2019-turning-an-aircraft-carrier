@@ -1,0 +1,336 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "",
+  "projects": {
+    "ngconf-app": {
+      "root": "apps/ngconf-app/",
+      "sourceRoot": "apps/ngconf-app/src",
+      "projectType": "application",
+      "prefix": "c1-ngconf",
+      "schematics": {
+        "@nrwl/schematics:component": {
+          "style": "scss"
+        }
+      },
+      "architect": {
+        "build": {
+          "builder": "./tools/builders/ngconf-app-builder:browser",
+          "options": {
+            "outputPath": "dist/apps/ngconf-app",
+            "index": "index.html",
+            "main": "apps/ngconf-app/src/main.ts",
+            "polyfills": "apps/ngconf-app/src/polyfills.ts",
+            "tsConfig": "apps/ngconf-app/tsconfig.app.json",
+            "assets": [
+              "apps/ngconf-app/src/favicon.ico",
+              "apps/ngconf-app/src/assets"
+            ],
+            "styles": [],
+            "scripts": [],
+            "es5BrowserSupport": true
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/ngconf-app/src/environments/environment.ts",
+                  "with": "apps/ngconf-app/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "none",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "./tools/builders/ngconf-app-builder:dev-server",
+          "options": {
+            "browserTarget": "ngconf-app:build",
+            "aot": true
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "ngconf-app:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "ngconf-app:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/ngconf-app/tsconfig.app.json",
+              "apps/ngconf-app/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "test": {
+          "builder": "ngx-build-plus:karma",
+          "options": {
+            "jestConfig": "apps/ngconf-app/jest.config.js",
+            "tsConfig": "apps/ngconf-app/tsconfig.spec.json",
+            "setupFile": "apps/ngconf-app/src/test-setup.ts"
+          }
+        }
+      }
+    },
+    "ngconf-app-team-b": {
+      "root": "apps/ngconf-app/src/deployable-units/team-b",
+      "sourceRoot": "apps/ngconf-app/src/deployable-units/team-b",
+      "projectType": "application",
+      "prefix": "c1-ngconf",
+      "schematics": {
+        "@nrwl/schematics:component": {
+          "style": "scss"
+        }
+      },
+      "architect": {
+        "build": {
+          "builder": "./tools/builders/ngconf-app-builder:browser-deployable-unit",
+          "options": {
+            "outputPath": "dist/apps/ngconf-app/deployable-units/team-b",
+            "main": "apps/ngconf-app/src/deployable-units/team-b/ngconf-app-team-b.main.ts",
+            "index": "",
+            "polyfills": "",
+            "tsConfig": "apps/ngconf-app/tsconfig.app.json",
+            "assets": [],
+            "styles": [],
+            "scripts": [],
+            "es5BrowserSupport": false,
+            "aot": true
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [],
+              "optimization": true,
+              "outputHashing": "none",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": false,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "ngconf-app-team-a": {
+      "root": "apps/ngconf-app/src/deployable-units/team-a",
+      "sourceRoot": "apps/ngconf-app/src/deployable-units/team-a",
+      "projectType": "application",
+      "prefix": "c1-ngconf",
+      "schematics": {
+        "@nrwl/schematics:component": {
+          "style": "scss"
+        }
+      },
+      "architect": {
+        "build": {
+          "builder": "./tools/builders/ngconf-app-builder:browser-deployable-unit",
+          "options": {
+            "outputPath": "dist/apps/ngconf-app/deployable-units/team-a",
+            "main": "apps/ngconf-app/src/deployable-units/team-a/ngconf-app-team-a.main.ts",
+            "index": "",
+            "polyfills": "",
+            "tsConfig": "apps/ngconf-app/tsconfig.app.json",
+            "assets": [],
+            "styles": [],
+            "scripts": [],
+            "es5BrowserSupport": false,
+            "aot": true
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [],
+              "optimization": true,
+              "outputHashing": "none",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": false,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "team-b-element-one": {
+      "root": "libs/team-b/element-one",
+      "sourceRoot": "libs/team-b/element-one/src",
+      "projectType": "library",
+      "prefix": "c1-ngconf",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/team-b/element-one/tsconfig.lib.json",
+              "libs/team-b/element-one/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/builders:jest",
+          "options": {
+            "jestConfig": "libs/team-b/element-one/jest.config.js",
+            "tsConfig": "libs/team-b/element-one/tsconfig.spec.json",
+            "setupFile": "libs/team-b/element-one/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/schematics:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "team-b-element-two": {
+      "root": "libs/team-b/element-two",
+      "sourceRoot": "libs/team-b/element-two/src",
+      "projectType": "library",
+      "prefix": "c1-ngconf",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/team-b/element-two/tsconfig.lib.json",
+              "libs/team-b/element-two/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/builders:jest",
+          "options": {
+            "jestConfig": "libs/team-b/element-two/jest.config.js",
+            "tsConfig": "libs/team-b/element-two/tsconfig.spec.json",
+            "setupFile": "libs/team-b/element-two/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/schematics:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "team-a-element-one": {
+      "root": "libs/team-a/element-one",
+      "sourceRoot": "libs/team-a/element-one/src",
+      "projectType": "library",
+      "prefix": "c1-ngconf",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/team-a/element-one/tsconfig.lib.json",
+              "libs/team-a/element-one/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/builders:jest",
+          "options": {
+            "jestConfig": "libs/team-a/element-one/jest.config.js",
+            "tsConfig": "libs/team-a/element-one/tsconfig.spec.json",
+            "setupFile": "libs/team-a/element-one/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/schematics:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "shared-elements-utils": {
+      "root": "libs/shared/elements-utils",
+      "sourceRoot": "libs/shared/elements-utils/src",
+      "projectType": "library",
+      "prefix": "c1-ngconf",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/shared/elements-utils/tsconfig.lib.json",
+              "libs/shared/elements-utils/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/builders:jest",
+          "options": {
+            "jestConfig": "libs/shared/elements-utils/jest.config.js",
+            "tsConfig": "libs/shared/elements-utils/tsconfig.spec.json"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/schematics:component": {
+          "styleext": "scss"
+        }
+      }
+    }
+  },
+  "cli": {
+    "warnings": {
+      "typescriptMismatch": false,
+      "versionMismatch": false
+    },
+    "defaultCollection": "@nrwl/schematics"
+  },
+  "schematics": {
+    "@nrwl/schematics:application": {
+      "style": "scss"
+    },
+    "@nrwl/schematics:library": {
+      "style": "scss"
+    }
+  },
+  "defaultProject": "ngconf-app"
+}

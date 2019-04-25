@@ -1,0 +1,27 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es5",
+    "module": "es2015",
+    "typeRoots": ["node_modules/@types"],
+    "lib": ["es2017", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@c1-ngconf/team-b/element-one": ["libs/team-b/element-one/src/index.ts"],
+      "@c1-ngconf/team-b/element-two": ["libs/team-b/element-two/src/index.ts"],
+      "@c1-ngconf/team-a/element-one": ["libs/team-a/element-one/src/index.ts"],
+      "@c1-ngconf/shared/elements-utils": [
+        "libs/shared/elements-utils/src/index.ts"
+      ]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}

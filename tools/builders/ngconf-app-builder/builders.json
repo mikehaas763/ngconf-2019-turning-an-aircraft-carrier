@@ -1,0 +1,20 @@
+{
+  "$schema": "@angular-devkit/architect/src/builders-schema.json",
+  "builders": {
+    "browser": {
+      "class": "./src/browser/index.js",
+      "schema": "./src/browser/auto-generated-schema.json",
+      "description": "ngconf-app extensions to the standard Angular CLI browser builder"
+    },
+    "browser-deployable-unit": {
+      "class": "./src/browser-deployable-unit/index.js",
+      "schema": "./src/browser-deployable-unit/auto-generated-schema.json",
+      "description": "ngconf-app deployable-unit extensions to the standard Angular CLI browser builder"
+    },
+    "dev-server": {
+      "class": "./src/dev-server/index.js",
+      "schema": "./src/dev-server/auto-generated-schema.json",
+      "description": "ngconf-app extensions to the standard Angular CLI dev-server builder"
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "npmScope": "c1-ngconf",
+  "implicitDependencies": {
+    "angular.json": "*",
+    "package.json": "*",
+    "tsconfig.json": "*",
+    "tslint.json": "*",
+    "nx.json": "*"
+  },
+  "projects": {
+    "ngconf-app": {
+      "tags": []
+    },
+    "ngconf-app-team-b": {
+      "tags": []
+    },
+    "ngconf-app-team-a": {
+      "tags": []
+    },
+    "team-b-element-one": {
+      "tags": []
+    },
+    "team-b-element-two": {
+      "tags": []
+    },
+    "team-a-element-one": {
+      "tags": []
+    },
+    "shared-elements-utils": {
+      "tags": []
+    }
+  }
+}
